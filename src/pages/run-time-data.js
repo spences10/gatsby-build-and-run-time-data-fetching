@@ -34,7 +34,12 @@ export default () => {
     }
     getRunTimeData()
   }, [])
-  if (loading) return <p>Loading...</p>
+  if (loading)
+    return (
+      <Layout>
+        <p>Loading...</p>
+      </Layout>
+    )
   return (
     <Layout>
       <h2>{runTimeData.queryArtists[0].name}</h2>
