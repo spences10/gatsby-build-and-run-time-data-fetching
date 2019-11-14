@@ -3,35 +3,22 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
 export default () => {
-  const [tweets, setTweets] = useState({})
+  const [runTimeData, setRunTimeData] = useState({})
   useEffect(() => {
-    async function getTweets() {
+    async function getRunTimeData() {
       const res = await axios({
-        url: 'https://www.graphqlhub.com/graphql',
+        url: 'https://spotify-graphql-server.herokuapp.com/graphql',
         method: 'post',
         data: {
           query: `
             {
-              twitter {
-                user (identifier: name, identity: "spences10") {
-                  created_at
-                  description
-                  id
-                  screen_name
+              queryArtists(byName:"Andy C") {
+                name
+                id
+                image
+                albums {
                   name
-                  profile_image_url
-                  url
-                  tweets_count
-                  followers_count
-                  tweets(limit: 10) {
-                    text
-                    retweets {
-                      user {
-                        screen_name
-                      }
-                      in_reply_to_tweet_id
-                    }
-                  }
+                  image
                 }
               }
             }
@@ -39,10 +26,10 @@ export default () => {
         },
       })
       const { data } = res.data
-      setTweets(data)
+      setRunTimeData(data)
     }
-    getTweets()
-  }, [tweets])
+    getRunTimeData()
+  }, [])
   return (
     <div
       style={{
@@ -52,7 +39,7 @@ export default () => {
       }}
     >
       <div style={{ textAlign: 'left' }}>
-        <Dump GraphQLResponse={tweets} />
+        <Dump tweets={runTimeData} GraphQLResponse={runTimeData} />
       </div>
     </div>
   )
