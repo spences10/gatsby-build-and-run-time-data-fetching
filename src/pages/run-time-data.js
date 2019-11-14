@@ -5,6 +5,8 @@ import Layout from '../components/layout'
 
 export default () => {
   const [runTimeData, setRunTimeData] = useState({})
+  const [loading, setLoading] = useState(true)
+
   useEffect(() => {
     async function getRunTimeData() {
       const res = await axios({
@@ -28,9 +30,11 @@ export default () => {
       })
       const { data } = res.data
       setRunTimeData(data)
+      setLoading(false)
     }
     getRunTimeData()
   }, [])
+  if (loading) return <p>Loading...</p>
   return (
     <Layout>
       <h2>{runTimeData.queryArtists[0].name}</h2>
