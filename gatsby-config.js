@@ -1,10 +1,20 @@
+const siteMetadata = {
+  title: `Gatsby Data Fetching`,
+  description: `Data fetching with Gatsby at build and runtime`,
+  author: `@spences10`,
+}
+
 module.exports = {
-  siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-  },
+  siteMetadata: siteMetadata,
   plugins: [
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "RMAPI",
+        fieldName: "rickAndMorty",
+        url: "https://rickandmortyapi-gql.now.sh/",
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
