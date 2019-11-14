@@ -35,7 +35,25 @@ export default () => {
     <Layout>
       <div>
         <div style={{ textAlign: 'left' }}>
-          <Dump tweets={runTimeData} GraphQLResponse={runTimeData} />
+          <h2>{runTimeData.queryArtists[0].name}</h2>
+          <img
+            height="300px"
+            src={runTimeData.queryArtists[0].image}
+            alt={runTimeData.queryArtists[0].name}
+          />
+          {runTimeData.queryArtists[0].albums.map(album => (
+            <>
+              <h3>{album.name}</h3>
+              <img
+                height="300px"
+                src={album.image}
+                alt={album.name}
+              />
+            </>
+          ))}
+          <Dump
+            GraphQLResponse={runTimeData.queryArtists[0].albums}
+          />
         </div>
       </div>
     </Layout>
