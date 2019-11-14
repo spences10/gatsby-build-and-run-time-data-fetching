@@ -9,15 +9,13 @@ export default ({ data }) => {
   return (
     <Layout>
       {characters.results.map(character => (
-        <>
+        <div key={character.id}>
           <h2>{character.name}</h2>
           <p>Species: {character.species}</p>
           <img src={character.image} />
-        </>
+        </div>
       ))}
-      <div style={{ textAlign: 'left' }}>
-        <Dump GraphQLResponse={data} />
-      </div>
+      <Dump GraphQLResponse={data} />
     </Layout>
   )
 }
@@ -27,6 +25,7 @@ export const GatsbyQuery = graphql`
     rickAndMorty {
       characters {
         results {
+          id
           name
           species
           image
