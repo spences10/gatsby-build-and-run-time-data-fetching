@@ -1,6 +1,7 @@
 import Dump from '@wesbos/dump'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import Layout from '../components/layout'
 
 export default () => {
   const [runTimeData, setRunTimeData] = useState({})
@@ -31,16 +32,12 @@ export default () => {
     getRunTimeData()
   }, [])
   return (
-    <div
-      style={{
-        textAlign: 'center',
-        width: '800px',
-        margin: '50px auto',
-      }}
-    >
-      <div style={{ textAlign: 'left' }}>
-        <Dump tweets={runTimeData} GraphQLResponse={runTimeData} />
+    <Layout>
+      <div>
+        <div style={{ textAlign: 'left' }}>
+          <Dump tweets={runTimeData} GraphQLResponse={runTimeData} />
+        </div>
       </div>
-    </div>
+    </Layout>
   )
 }

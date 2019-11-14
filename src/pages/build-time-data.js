@@ -1,18 +1,13 @@
 import Dump from '@wesbos/dump'
 import React from 'react'
+import Layout from '../components/layout'
 
 export default ({ data }) => {
   const {
     rickAndMorty: { characters },
   } = data
   return (
-    <div
-      style={{
-        textAlign: 'center',
-        width: '800px',
-        margin: '50px auto',
-      }}
-    >
+    <Layout>
       {characters.results.map(character => (
         <>
           <h2>{character.name}</h2>
@@ -23,7 +18,7 @@ export default ({ data }) => {
       <div style={{ textAlign: 'left' }}>
         <Dump GraphQLResponse={data} />
       </div>
-    </div>
+    </Layout>
   )
 }
 
