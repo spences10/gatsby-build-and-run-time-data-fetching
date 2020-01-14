@@ -1,4 +1,5 @@
 import Dump from '@wesbos/dump'
+import { graphql } from 'gatsby'
 import React from 'react'
 import { Layout } from '../components/layout'
 
