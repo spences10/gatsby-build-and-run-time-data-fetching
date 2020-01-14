@@ -31,12 +31,12 @@ const NameWrapper = styled.div`
   padding: 0.5rem;
 `
 
-const Symbol = styled.span`
-  position: absolute;
-  font-size: 1.5rem;
-  right: 0;
-  padding: 0.5rem;
-`
+// const Symbol = styled.span`
+//   position: absolute;
+//   font-size: 1.5rem;
+//   right: 0;
+//   padding: 0.5rem;
+// `
 
 const Name = styled.span`
   font-size: 2rem;

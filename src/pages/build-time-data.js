@@ -12,7 +12,7 @@ export default ({ data }) => {
         <div key={character.id}>
           <h2>{character.name}</h2>
           <p>Species: {character.species}</p>
-          <img src={character.image} />
+          <img src={character.image} alt={character.name} />
         </div>
       ))}
       <Dump GraphQLResponse={data} />
