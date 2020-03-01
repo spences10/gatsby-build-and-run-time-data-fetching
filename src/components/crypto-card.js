@@ -13,13 +13,8 @@ const CardWrapper = styled.div`
     'p24hr p24hr p24hr p24hr'
     'p7d   p7d   p7d   p7d';
   border-radius: 10px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
-  &:hover {
-    /* transform: translateY(-3px); */
-    transition: all 0.3s;
-    /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8); */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-  }
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 `
 
 const NameWrapper = styled.div`
@@ -28,7 +23,7 @@ const NameWrapper = styled.div`
   background: #663399;
   color: #fff;
   border-radius: 10px 10px 0 0;
-  padding: 0.5rem;
+  padding: 1rem 0;
 `
 
 // const Symbol = styled.span`
@@ -41,6 +36,8 @@ const NameWrapper = styled.div`
 const Name = styled.span`
   font-size: 2rem;
   font-weight: bold;
+  padding: 1rem 0;
+  margin-left: 0.5rem;
 `
 
 const Price = styled.span`
@@ -53,6 +50,7 @@ const Price = styled.span`
     top: -11px;
     font-size: 1.5rem;
   }
+  margin-top: 1rem;
 `
 
 const PercentageChangeTitle = styled.h4`
