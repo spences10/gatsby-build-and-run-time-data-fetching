@@ -25,7 +25,9 @@ export default ({ data }) => {
 
   useEffect(() => {
     async function getRunTimeData() {
-      const res = await axios('https://api.coinlore.com/api/tickers/')
+      const res = await axios(
+        'https://api.coinlore.com/api/tickers/?start=1&limit=10'
+      )
       const { data } = res.data
       setRunTimeData(data)
       setLoading(false)
@@ -33,7 +35,7 @@ export default ({ data }) => {
     getRunTimeData()
   }, [])
 
-  const timeSinceBuild = 10
+  const timeSinceBuild = 15
 
   if (loading && timeDifference > timeSinceBuild)
     return (
