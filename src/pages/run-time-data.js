@@ -15,7 +15,7 @@ export default () => {
         data: {
           query: `
             {
-              queryArtists(byName:"Wilkinson") {
+              queryArtists(byName:"Cyantific") {
                 name
                 id
                 image
