@@ -16,7 +16,7 @@ module.exports = {
       options: {
         typeName: `RMAPI`,
         fieldName: `rickAndMorty`,
-        url: `https://rickandmortyapi-gql.now.sh/`,
+        url: `https://rickandmortyapi.com/graphql`,
       },
     },
     {

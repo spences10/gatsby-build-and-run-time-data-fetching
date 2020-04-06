@@ -1,3 +1,4 @@
+import Dump from '@wesbos/dump'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
@@ -35,7 +36,7 @@ export default ({ data }) => {
     getRunTimeData()
   }, [])
 
-  const timeSinceBuild = 15
+  const timeSinceBuild = 3
 
   if (loading && timeDifference > timeSinceBuild)
     return (
@@ -70,6 +71,7 @@ export default ({ data }) => {
           />
         ))}
       </Gallery>
+      <Dump data={coinloreData} />
     </Layout>
   )
 }
