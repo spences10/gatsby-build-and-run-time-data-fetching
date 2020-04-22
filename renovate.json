@@ -2,8 +2,10 @@
   "extends": [
     "config:base"
   ],
-  "packageRules": {
-    "packagePatterns": ["^gatsby"],
-    "extends": "schedule:monthly"
-  }
+  "packageRules": [
+    {
+      "packagePatterns": ["^gatsby"],
+      "extends": "schedule:monthly"
+    }
+  ]
 }
